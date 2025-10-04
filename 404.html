@@ -18,77 +18,175 @@
       justify-content: center;
       font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
       background: linear-gradient(135deg, #0a0a0f 0%, #1a0a1f 50%, #0f0a1a 100%);
-      color: #e5e7eb;
+      color: #f8fafc;
       overflow: hidden;
       position: relative;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      text-rendering: optimizeLegibility;
     }
 
-    /* Animated background elements */
-    .bg-orb {
+    .orb-container {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .orb {
       position: absolute;
       border-radius: 50%;
       filter: blur(80px);
-      opacity: 0.3;
-      animation: float 20s infinite ease-in-out;
+      opacity: 0.4;
+      animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
     }
 
     .orb-1 {
-      width: 400px;
-      height: 400px;
-      background: linear-gradient(135deg, #a855f7, #ec4899);
-      top: -200px;
-      left: -200px;
-      animation-delay: 0s;
+      width: 500px;
+      height: 500px;
+      background: radial-gradient(circle, #a855f7 0%, #7c3aed 50%, transparent 70%);
+      top: -150px;
+      left: -150px;
+      animation: float-1 25s ease-in-out infinite;
     }
 
     .orb-2 {
-      width: 350px;
-      height: 350px;
-      background: linear-gradient(135deg, #3b82f6, #8b5cf6);
-      bottom: -150px;
-      right: -150px;
-      animation-delay: -10s;
+      width: 450px;
+      height: 450px;
+      background: radial-gradient(circle, #ec4899 0%, #db2777 50%, transparent 70%);
+      bottom: -100px;
+      right: -100px;
+      animation: float-2 28s ease-in-out infinite;
     }
 
     .orb-3 {
-      width: 300px;
-      height: 300px;
-      background: linear-gradient(135deg, #ec4899, #f43f5e);
+      width: 400px;
+      height: 400px;
+      background: radial-gradient(circle, #6366f1 0%, #4f46e5 50%, transparent 70%);
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
-      animation-delay: -5s;
+      animation: float-3 30s ease-in-out infinite;
     }
 
-    @keyframes float {
-      0%, 100% {
+    .orb-4 {
+      width: 350px;
+      height: 350px;
+      background: radial-gradient(circle, #8b5cf6 0%, #7c3aed 50%, transparent 70%);
+      top: 20%;
+      right: 15%;
+      animation: float-4 22s ease-in-out infinite;
+    }
+
+    .orb-5 {
+      width: 380px;
+      height: 380px;
+      background: radial-gradient(circle, #d946ef 0%, #c026d3 50%, transparent 70%);
+      bottom: 25%;
+      left: 20%;
+      animation: float-5 26s ease-in-out infinite;
+    }
+
+    @keyframes float-1 {
+      0%, 100% { 
         transform: translate(0, 0) scale(1);
+        opacity: 0.4;
       }
-      33% {
-        transform: translate(30px, -30px) scale(1.1);
+      33% { 
+        transform: translate(120px, 150px) scale(1.1);
+        opacity: 0.5;
       }
-      66% {
-        transform: translate(-20px, 20px) scale(0.9);
+      66% { 
+        transform: translate(-80px, 100px) scale(0.9);
+        opacity: 0.35;
+      }
+    }
+
+    @keyframes float-2 {
+      0%, 100% { 
+        transform: translate(0, 0) scale(1);
+        opacity: 0.4;
+      }
+      33% { 
+        transform: translate(-150px, -120px) scale(1.15);
+        opacity: 0.45;
+      }
+      66% { 
+        transform: translate(100px, -80px) scale(0.95);
+        opacity: 0.38;
+      }
+    }
+
+    @keyframes float-3 {
+      0%, 100% { 
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 0.3;
+      }
+      50% { 
+        transform: translate(-50%, -50%) translate(80px, -80px) scale(1.2);
+        opacity: 0.4;
+      }
+    }
+
+    @keyframes float-4 {
+      0%, 100% { 
+        transform: translate(0, 0) scale(1);
+        opacity: 0.35;
+      }
+      50% { 
+        transform: translate(-100px, 120px) scale(1.1);
+        opacity: 0.45;
+      }
+    }
+
+    @keyframes float-5 {
+      0%, 100% { 
+        transform: translate(0, 0) scale(1);
+        opacity: 0.38;
+      }
+      50% { 
+        transform: translate(130px, -90px) scale(1.15);
+        opacity: 0.48;
       }
     }
 
     .container {
       position: relative;
-      z-index: 10;
-      max-width: 600px;
+      z-index: 1;
+      max-width: 700px;
       width: 90%;
-      padding: 48px 40px;
-      background: rgba(17, 24, 39, 0.6);
-      backdrop-filter: blur(20px);
-      border: 1px solid rgba(139, 92, 246, 0.2);
-      border-radius: 24px;
-      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5),
-                  0 0 80px rgba(139, 92, 246, 0.1);
+      padding: 48px;
       text-align: center;
-      animation: slideUp 0.8s ease-out;
     }
 
-    @keyframes slideUp {
+    .card {
+      background: rgba(15, 15, 25, 0.7);
+      backdrop-filter: blur(24px) saturate(180%);
+      -webkit-backdrop-filter: blur(24px) saturate(180%);
+      border: 1px solid rgba(168, 85, 247, 0.2);
+      border-radius: 24px;
+      padding: 64px 48px;
+      box-shadow: 
+        0 20px 60px rgba(0, 0, 0, 0.5),
+        0 0 80px rgba(168, 85, 247, 0.15),
+        inset 0 1px 0 rgba(255, 255, 255, 0.1);
+      animation: fadeInUp 1s cubic-bezier(0.16, 1, 0.3, 1);
+      transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(168, 85, 247, 0.4);
+      box-shadow: 
+        0 30px 80px rgba(0, 0, 0, 0.6),
+        0 0 120px rgba(168, 85, 247, 0.25),
+        inset 0 1px 0 rgba(255, 255, 255, 0.15);
+    }
+
+    @keyframes fadeInUp {
       from {
         opacity: 0;
         transform: translateY(30px);
@@ -100,17 +198,18 @@
     }
 
     .error-code {
-      font-size: 120px;
+      font-size: clamp(80px, 15vw, 140px);
       font-weight: 900;
       line-height: 1;
       margin-bottom: 24px;
-      background: linear-gradient(135deg, #a855f7, #ec4899, #f43f5e);
+      background: linear-gradient(135deg, #a855f7 0%, #ec4899 50%, #f97316 100%);
       background-size: 200% 200%;
       -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
       background-clip: text;
-      animation: gradientShift 3s ease infinite;
-      letter-spacing: -4px;
+      -webkit-text-fill-color: transparent;
+      animation: gradientShift 6s ease-in-out infinite;
+      letter-spacing: -0.02em;
+      filter: drop-shadow(0 0 40px rgba(168, 85, 247, 0.5));
     }
 
     @keyframes gradientShift {
@@ -123,119 +222,140 @@
     }
 
     h1 {
-      font-size: 32px;
+      font-size: clamp(24px, 4vw, 36px);
       font-weight: 700;
       margin-bottom: 16px;
-      color: #f9fafb;
-      letter-spacing: -0.5px;
+      color: #f8fafc;
+      letter-spacing: -0.01em;
+      line-height: 1.2;
     }
 
     p {
-      font-size: 18px;
-      color: #9ca3af;
+      font-size: clamp(16px, 2.5vw, 18px);
+      color: #cbd5e1;
       margin-bottom: 32px;
       line-height: 1.6;
+      font-weight: 400;
     }
 
-    .btn {
-      display: inline-block;
+    .button-container {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    a {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
       padding: 14px 32px;
-      background: linear-gradient(135deg, #8b5cf6, #a855f7);
-      color: white;
+      background: linear-gradient(135deg, #a855f7 0%, #ec4899 100%);
+      color: #fff;
       text-decoration: none;
       border-radius: 12px;
       font-weight: 600;
       font-size: 16px;
-      transition: all 0.3s ease;
-      border: 1px solid rgba(168, 85, 247, 0.3);
-      box-shadow: 0 4px 20px rgba(139, 92, 246, 0.3);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      box-shadow: 
+        0 4px 20px rgba(168, 85, 247, 0.4),
+        inset 0 1px 0 rgba(255, 255, 255, 0.2);
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      position: relative;
+      overflow: hidden;
     }
 
-    .btn:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 8px 30px rgba(139, 92, 246, 0.5);
-      background: linear-gradient(135deg, #9333ea, #c026d3);
-    }
-
-    .btn:active {
-      transform: translateY(0);
-    }
-
-    /* Decorative elements */
-    .dots {
+    a::before {
+      content: '';
       position: absolute;
-      top: 20px;
-      right: 20px;
-      display: flex;
-      gap: 8px;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+      transition: left 0.5s ease;
     }
 
-    .dot {
-      width: 8px;
-      height: 8px;
-      border-radius: 50%;
-      background: rgba(168, 85, 247, 0.4);
-      animation: pulse 2s infinite ease-in-out;
+    a:hover::before {
+      left: 100%;
     }
 
-    .dot:nth-child(2) {
-      animation-delay: 0.3s;
+    a:hover {
+      transform: translateY(-2px) scale(1.02);
+      box-shadow: 
+        0 8px 30px rgba(168, 85, 247, 0.6),
+        inset 0 1px 0 rgba(255, 255, 255, 0.3);
+      border-color: rgba(255, 255, 255, 0.2);
     }
 
-    .dot:nth-child(3) {
-      animation-delay: 0.6s;
+    a:active {
+      transform: translateY(0) scale(0.98);
     }
 
-    @keyframes pulse {
-      0%, 100% {
-        opacity: 0.4;
-        transform: scale(1);
-      }
-      50% {
-        opacity: 1;
-        transform: scale(1.2);
-      }
+    .secondary-btn {
+      background: rgba(30, 30, 45, 0.8);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(168, 85, 247, 0.3);
+      box-shadow: 
+        0 4px 20px rgba(0, 0, 0, 0.3),
+        inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    }
+
+    .secondary-btn:hover {
+      background: rgba(40, 40, 60, 0.9);
+      border-color: rgba(168, 85, 247, 0.5);
+      box-shadow: 
+        0 8px 30px rgba(168, 85, 247, 0.3),
+        inset 0 1px 0 rgba(255, 255, 255, 0.15);
     }
 
     @media (max-width: 640px) {
-      .error-code {
-        font-size: 80px;
+      .card {
+        padding: 48px 32px;
       }
-
-      h1 {
-        font-size: 24px;
+      
+      .button-container {
+        flex-direction: column;
       }
-
-      p {
-        font-size: 16px;
-      }
-
-      .container {
-        padding: 32px 24px;
-      }
-
-      .bg-orb {
-        filter: blur(60px);
+      
+      a {
+        width: 100%;
+        justify-content: center;
       }
     }
   </style>
 </head>
 <body>
-  <div class="bg-orb orb-1"></div>
-  <div class="bg-orb orb-2"></div>
-  <div class="bg-orb orb-3"></div>
+  <div class="orb-container">
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+    <div class="orb orb-3"></div>
+    <div class="orb orb-4"></div>
+    <div class="orb orb-5"></div>
+  </div>
 
   <div class="container">
-    <div class="dots">
-      <div class="dot"></div>
-      <div class="dot"></div>
-      <div class="dot"></div>
+    <div class="card">
+      <div class="error-code">404</div>
+      <h1>Ups, esta página no existe</h1>
+      <p>El enlace puede estar roto o la página fue movida. No te preocupes, te ayudamos a volver al camino correcto.</p>
+      <div class="button-container">
+        <a href="/">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+            <polyline points="9 22 9 12 15 12 15 22"></polyline>
+          </svg>
+          Volver al inicio
+        </a>
+        <a href="javascript:history.back()" class="secondary-btn">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="19" y1="12" x2="5" y2="12"></line>
+            <polyline points="12 19 5 12 12 5"></polyline>
+          </svg>
+          Regresar
+        </a>
+      </div>
     </div>
-    
-    <div class="error-code">404</div>
-    <h1>Ups, esta página no existe</h1>
-    <p>El enlace puede estar roto o la página fue movida. No te preocupes, te ayudamos a volver al camino correcto.</p>
-    <a href="/" class="btn">Volver al inicio</a>
   </div>
 </body>
 </html>
