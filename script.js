@@ -185,6 +185,30 @@ window.addEventListener("scroll", () => {
   lastScrollY = scrollY
 })
 
+const orbs = document.querySelectorAll(".orb")
+let mouseX = 0
+let mouseY = 0
+
+document.addEventListener("mousemove", (e) => {
+  mouseX = e.clientX
+  mouseY = e.clientY
+})
+
+// Animar orbes para que sigan el cursor sutilmente
+function animateOrbs() {
+  orbs.forEach((orb, index) => {
+    const speed = (index + 1) * 0.0005 // Diferentes velocidades para cada orbe
+    const x = (mouseX - window.innerWidth / 2) * speed
+    const y = (mouseY - window.innerHeight / 2) * speed
+
+    orb.style.transform = `translate(${x}px, ${y}px)`
+  })
+
+  requestAnimationFrame(animateOrbs)
+}
+
+animateOrbs()
+
 // Efecto de cursor personalizado (opcional - comentado por defecto)
 /*
 const cursor = document.createElement('div');
