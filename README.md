@@ -1,18 +1,20 @@
 <!-- Encabezado animado -->
-<h1 align="center">👋 Hola, soy Juan Federico Pulido Betancur</h1>
+<h1 align="center">👋Hola, mi nombre es Federico</h1>
 <h3 align="center">💻 Estudiante de Ingeniería de Sistemas (UTP) y Tecnólogo ADS (SENA)</h3>
 
 <p align="center">
-  📍 Pereira, Colombia · 🌱 Apasionado por el aprendizaje y la combinación entre diseño y programación
+  📍 Pereira, Colombia · 🌱 Apasionado por el aprendizaje, la combinación entre diseño y programación y la adaptación de la AI.
 </p>
 
 ---
 
 ### 🚀 SOBRE MÍ
 
-Soy un desarrollador en formación con enfoque en **aplicaciones web**, **algoritmos**, y **dashboards interactivos**.  
-Disfruto aprender nuevas tecnologías y experimentar con herramientas como **IA** y **automatizadores (n8n, Zapier, etc.)** para mejorar procesos y productividad.  
-Actualmente me encuentro fortaleciendo mis conocimientos en **Laravel**, **Astro**, y **Python**.
+Soy un desarrollador en formación apasionado por la creación de aplicaciones web, el diseño de algoritmos eficientes y la construcción de dashboards interactivos.
+Disfruto aprender nuevas tecnologías y experimentar con herramientas de inteligencia artificial y automatización como n8n, Zapier y Power Automate, buscando optimizar procesos y aumentar la productividad.
+Actualmente estoy fortaleciendo mis conocimientos en n8n, Astro, Python, React, Django y TypeScript. 
+
+Curso el séptimo semestre de Ingeniería de Sistemas y me encuentro finalizando la etapa práctica del tecnólogo en Análisis y Desarrollo de Software.
 
 ---
 
@@ -68,5 +70,5 @@ Autenticación, base de datos y sistema de roles.
 ---
 
 <p align="center">
-  ✨ *Creado con dedicación, creatividad y amor por el código.* ✨
+  ✨ *Creado con dedicación, creatividad y amor por el aprendizaje.* ✨
 </p>
